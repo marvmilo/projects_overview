@@ -72,7 +72,8 @@ def page_content():
                                     style = {"width": "200px"}
                                 ),
                                 style = flex_style
-                            )
+                            ),
+                            html.Div(style = {"width": "375px"})
                         ],
                         color = "primary",
                         style = {
@@ -80,15 +81,13 @@ def page_content():
                         }
                     ),
                     html.Br(),
-                ],
-                width = "auto"
+                ]
             )
         )
         
     #return row
     return dbc.Row(
-        children = columns,
-        justify = "center"
+        children = columns
     )
 
 #init app content
