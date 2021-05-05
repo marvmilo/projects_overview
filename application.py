@@ -18,6 +18,7 @@ flex_style = {
 emoji_style = {
     "font-family": "apple color emoji,segoe ui emoji,noto color emoji,android emoji,emojisymbols,emojione mozilla,twemoji mozilla,segoe ui symbol"
 }
+navbar_tilte = " ".join(title.upper().replace(" ", "-"))
 
 #init app
 app = dash.Dash( 
@@ -136,7 +137,7 @@ app.layout = html.Div(
                     className="ml-auto flex-nowrap mt-3 mt-md-0"
                 )
             ],
-            brand = title.upper(),
+            brand = navbar_tilte,
             color = "primary",
             dark = True,
         ),
