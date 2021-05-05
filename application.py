@@ -50,12 +50,12 @@ def page_content():
                 children = [
                     dbc.Alert(
                         children = [
-                            html.H3(project["name"]),
+                            html.H4(project["name"]),
                             dbc.Badge(project["status"], color = color),
                             html.Div(
                                 html.H1(
                                     emoji.emojize(project["icon"]),
-                                    style = {"font-size": "75px"}
+                                    style = {"font-size": "50px"}
                                 ),
                                 style = flex_style
                             ),
@@ -64,7 +64,6 @@ def page_content():
                                 html.A(
                                     dbc.Button(
                                         "VIEW",
-                                        size = "lg",
                                         color = "primary",
                                         block = True
                                     ),
@@ -73,7 +72,7 @@ def page_content():
                                 ),
                                 style = flex_style
                             ),
-                            html.Div(style = {"width": "375px"})
+                            html.Div(style = {"width": "300px"})
                         ],
                         color = "primary",
                         style = {
@@ -136,9 +135,9 @@ app.layout = html.Div(
                     className="ml-auto flex-nowrap mt-3 mt-md-0"
                 )
             ],
-            brand = title,
+            brand = title.upper(),
             color = "primary",
-            dark = True
+            dark = True,
         ),
         
         #page content
