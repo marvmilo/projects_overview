@@ -1,1 +1,1 @@
-https://github.com/marvmilo/projects_overview.git
+web: gunicorn application:server
