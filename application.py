@@ -68,6 +68,7 @@ def page_content():
                                         block = True
                                     ),
                                     href = project["url"],
+                                    target = "_blank",
                                     style = {"width": "200px"}
                                 ),
                                 style = flex_style
