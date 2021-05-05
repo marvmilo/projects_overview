@@ -1,0 +1,38 @@
+[
+    {
+        "name": "Arschloch Stats",
+        "url":  "https://arschloch-stats.herokuapp.com/",
+        "status": "ONLINE",
+        "icon": ":spade_suit:"
+    },
+    {
+        "name": "Projektarbeit SoSe 2021 GUI",
+        "url":  "https://gui-projektarbeit-sose-2021.herokuapp.com/",
+        "status": "WORKING...",
+        "icon": ":clipboard:"
+    },
+    {
+        "name": "Projektarbeit SoSe 2021 API",
+        "url":  "https://api-projektarbeit-sose-2021.herokuapp.com/docs",
+        "status": "ONLINE",
+        "icon": ":floppy_disk:"
+    },
+    {
+        "name": "Adventurer 3 Control",
+        "url":  "https://adventurer3-control.herokuapp.com/",
+        "status": "OFFLINE",
+        "icon": ":printer:"
+    },
+    {
+        "name": "Adventurer 3 Control API",
+        "url":  "https://adventurer3-control.marvmilo.net:8000/docs",
+        "status": "ONLINE",
+        "icon": ":gear:"
+    },
+    {
+        "name": "Kathis Veganer Keller",
+        "url":  "https://kathis-veganer-keller.herokuapp.com/",
+        "status": "OFFLINE",
+        "icon": ":herb:"
+    }
+]
