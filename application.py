@@ -76,8 +76,7 @@ def page_content():
                         ],
                         color = "primary",
                         style = {
-                            "height": "90%",
-                            "width": "400px"
+                            "height": "90%"
                         }
                     ),
                     html.Br(),
