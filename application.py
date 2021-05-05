@@ -5,7 +5,7 @@ import json
 import emoji
 
 #app values
-title = "Projects Overview"
+title = "Project Overview"
 external_stylesheets = [dbc.themes.BOOTSTRAP]
 meta_tags = [{"name": "viewport", "content": "width=device-width, initial-scale=1"}]
 
