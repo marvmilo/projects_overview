@@ -3,4 +3,4 @@
 Tool for listing all running Projects.
 
 Link:
-https://marvmilo.herokuapp.com/
+https://marvmilo.herokuapp.com/git
