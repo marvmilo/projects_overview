@@ -15,7 +15,7 @@ flex_style = {
     "display": "flex",
     "justify-content": "center",
     "align-items": "center"
-},
+}
 navbar_spacing = html.Div(style = {"width": "5px"})
 
 #init app
