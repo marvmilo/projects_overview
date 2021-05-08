@@ -15,7 +15,8 @@ flex_style = {
     "display": "flex",
     "justify-content": "center",
     "align-items": "center"
-}
+},
+navbar_spacing = html.Div(style = {"width": "5px"})
 
 #init app
 app = dash.Dash( 
@@ -135,6 +136,7 @@ app.layout = html.Div(
                                 ),
                                 width = "auto"
                             ),
+                            navbar_spacing,
                             dbc.Col(
                                 html.A(
                                     dbc.Button(
@@ -147,6 +149,7 @@ app.layout = html.Div(
                                 ),
                                 width = "auto"
                             ),
+                            navbar_spacing,
                             dbc.Col(
                                 html.A(
                                     dbc.Button(
