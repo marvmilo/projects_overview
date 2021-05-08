@@ -1,11 +1,12 @@
 import dash
 import dash_bootstrap_components as dbc
 import dash_html_components as html
+from dash.dependencies import Input, Output, State
 import json
 import emoji
 
 #app values
-title = "Project Overview"
+title = "Projects Overview"
 external_stylesheets = [dbc.themes.BOOTSTRAP]
 meta_tags = [{"name": "viewport", "content": "width=device-width, initial-scale=1"}]
 
@@ -15,10 +16,6 @@ flex_style = {
     "justify-content": "center",
     "align-items": "center"
 }
-emoji_style = {
-    "font-family": "apple color emoji,segoe ui emoji,noto color emoji,android emoji,emojisymbols,emojione mozilla,twemoji mozilla,segoe ui symbol"
-}
-navbar_tilte = " ".join(title.upper().replace(" ", "-"))
 
 #init app
 app = dash.Dash( 
@@ -94,52 +91,86 @@ def page_content():
 #init app content
 app.layout = html.Div(
     children = [
-        #navbar for whole page
-        dbc.NavbarSimple(
+        #navbar
+        
+        #Navbar
+        dbc.Navbar(
             children = [
+                #navbar title
                 dbc.Row(
                     children = [
                         dbc.Col(
-                            html.A(
-                                dbc.Button(
-                                    "Github",
-                                    color = "primary",
-                                    className = "ml-2"
-                                ),
-                                href = "https://github.com/marvmilo?tab=repositories",
-                                target = "_blank"
-                            )
-                        ),
-                        dbc.Col(
-                            html.A(
-                                dbc.Button(
-                                    "Heroku",
-                                    color = "primary",
-                                    className = "ml-2"
-                                ),
-                                href = "https://dashboard.heroku.com/apps",
-                                target = "_blank"
-                            )
-                        ),
-                        dbc.Col(
-                            html.A(
-                                dbc.Button(
-                                    "AWS",
-                                    color = "primary",
-                                    className = "ml-2"
-                                ),
-                                href = "https://aws.amazon.com/de/console/",
-                                target = "_blank"
-                            )
+                            " ".join(word.upper()),
+                            style = {
+                                "font-size": "20px",
+                                "color": "white",
+                                "white-space": "nowrap"
+                            },
+                            width = "auto"
                         )
+                        for word in title.split(" ")
                     ],
-                    no_gutters = True,
-                    className="ml-auto flex-nowrap mt-3 mt-md-0"
+                    style = {
+                        "width": "300px",
+                        "max-width": "85%"
+                    }
+                ),
+        
+                #navbar toggler
+                dbc.NavbarToggler(id = "nav-toggler"),
+                
+                #navbar interactions
+                dbc.Collapse(
+                    dbc.Row(
+                        children = [
+                            dbc.Col(
+                                html.A(
+                                    dbc.Button(
+                                        "Github",
+                                        color = "primary",
+                                        className = "ml-2"
+                                    ),
+                                    href = "https://github.com/marvmilo?tab=repositories",
+                                    target = "_blank"
+                                ),
+                                width = "auto"
+                            ),
+                            dbc.Col(
+                                html.A(
+                                    dbc.Button(
+                                        "Heroku",
+                                        color = "primary",
+                                        className = "ml-2"
+                                    ),
+                                    href = "https://dashboard.heroku.com/apps",
+                                    target = "_blank"
+                                ),
+                                width = "auto"
+                            ),
+                            dbc.Col(
+                                html.A(
+                                    dbc.Button(
+                                        "AWS",
+                                        color = "primary",
+                                        className = "ml-2"
+                                    ),
+                                    href = "https://aws.amazon.com/de/console/",
+                                    target = "_blank"
+                                ),
+                                width = "auto"
+                            )
+                        ],
+                        justify = "end",
+                        no_gutters = True,
+                        style = {"width": "100%"}
+                    ),
+                    navbar = True,
+                    id = "nav-collapse"
                 )
             ],
-            brand = navbar_tilte,
             color = "primary",
             dark = True,
+            style = {"padding": "20px 40px"}
         ),
         
         #page content
@@ -152,6 +183,17 @@ app.layout = html.Div(
         )
     ]
 )
+
+#navbar collapse callback
+@app.callback(
+    [Output("nav-collapse", "is_open")],
+    [Input("nav-toggler", "n_clicks")],
+    [State("nav-collapse", "is_open")]
+)
+def toggle_navbar_collapse(n_clicks, is_open):
+    if n_clicks:
+        return [not is_open]
+    return [is_open]
 
 #for debugging
 if __name__ == '__main__':
