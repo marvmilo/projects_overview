@@ -20,14 +20,8 @@
     {
         "name": "Adventurer 3 Control",
         "url":  "https://adventurer3-control.herokuapp.com/",
-        "status": "OFFLINE",
+        "status": "WORKING",
         "icon": ":printer:"
-    },
-    {
-        "name": "Adventurer 3 Control API",
-        "url":  "https://adventurer3-control.marvmilo.net:8000/docs",
-        "status": "ONLINE",
-        "icon": ":control_knobs:"
     },
     {
         "name": "Kathis Veganer Keller",
